@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shadow Emulator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://js-dos.com/6.22/current/js-dos.js"></script>
+  </head>
+  <body>
+    <main class="app">
+      <h1>Shadow Emulator</h1>
+      <p class="subtitle">Drag and drop a DOS-compatible <code>.exe</code> to launch it in your browser.</p>
+
+      <section id="dropZone" class="drop-zone" aria-label="Drop executable here">
+        <p><strong>Drop your .exe file here</strong></p>
+        <p>or</p>
+        <label class="file-label" for="fileInput">Choose File</label>
+        <input id="fileInput" type="file" accept=".exe" />
+      </section>
+
+      <section class="library">
+        <h2>Game Library</h2>
+        <p class="library-subtitle">Quick launch public DOS game archives and shareware builds.</p>
+        <div id="gameLibrary" class="game-library"></div>
+      </section>
+
+      <p id="status" class="status">Waiting for file...</p>
+
+      <section class="screen-wrap">
+        <div id="emulator"></div>
+      </section>
+
+      <details class="note">
+        <summary>Important compatibility note</summary>
+        <p>
+          Modern Windows desktop executables are not directly runnable in browsers.
+          This page uses DOSBox (via js-dos), so only DOS-era executables are likely
+          to work.
+        </p>
+      </details>
+    </main>
+
+    <script src="games.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
